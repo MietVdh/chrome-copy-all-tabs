@@ -1,0 +1,27 @@
+{
+    "manifest_version": 3,
+    "name": "Copy All Tabs",
+    "version": "0.0.0.1",
+    "description": "Copy hyperlinks for all open tabs",
+    "background": {
+        "service_worker": "scripts/background.js"
+        },
+    "permissions": [
+        "activeTab",
+        "tabs"
+      ],
+    "icons": {
+        "32": "icons/icon-32.png",
+        "128": "icons/icon-128.png"
+        },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["scripts/content.js"]
+        }
+        ],
+    "action": {
+        "default_title": "Click to copy hyperlinks for all tabs"
+        },
+    "host_permissions": ["<all_urls>"]
+}
